@@ -4,13 +4,16 @@ import 'package:http/http.dart' as http;
 
 class GeocoderPro {
   ///Get City ,country , postalCode,state,streetNumber and countryCode from latitude and longitude
-  static Future<GeoData> getDataFromCoordinates({
+  static Future<GeoData?> getDataFromCoordinates({
     required double latitude,
     required double longitude,
     required String googleMapApiKey,
     String? language,
   }) async {
-    var url = language != null ? 'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&key=$googleMapApiKey&language=$language' : 'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&key=$googleMapApiKey';
+    var url =
+        language != null
+            ? 'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&key=$googleMapApiKey&language=$language'
+            : 'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&key=$googleMapApiKey';
     var request = http.Request('GET', Uri.parse(url));
     http.StreamedResponse response = await request.send();
     if (response.statusCode == 200) {
@@ -56,17 +59,20 @@ class GeocoderPro {
         countryCode: countryCode,
       );
     } else {
-      return null as GeoData;
+      return null;
     }
   }
 
   ///Get City ,country , postalCode,state,streetNumber and countryCode from address like "277 Bedford Ave, Brooklyn, NY 11211, USA"
-  static Future<GeoData> getDataFromAddress({
+  static Future<GeoData?> getDataFromAddress({
     required String address,
     required String googleMapApiKey,
     String? language,
   }) async {
-    var url = language != null ? 'https://maps.googleapis.com/maps/api/geocode/json?address=$address&key=$googleMapApiKey&language=$language' : 'https://maps.googleapis.com/maps/api/geocode/json?address=$address&key=$googleMapApiKey';
+    var url =
+        language != null
+            ? 'https://maps.googleapis.com/maps/api/geocode/json?address=$address&key=$googleMapApiKey&language=$language'
+            : 'https://maps.googleapis.com/maps/api/geocode/json?address=$address&key=$googleMapApiKey';
     var request = http.Request('GET', Uri.parse(url));
 
     http.StreamedResponse response = await request.send();
@@ -115,7 +121,7 @@ class GeocoderPro {
         streetNumber: streetNumber,
       );
     } else {
-      return null as GeoData;
+      return null;
     }
   }
 }
