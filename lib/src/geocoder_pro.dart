@@ -2,8 +2,22 @@ import 'package:geocoder_pro/src/modal/data.dart';
 import 'package:geocoder_pro/src/modal/fetch_geocoder.dart';
 import 'package:http/http.dart' as http;
 
+/// A utility class for geocoding operations using the Google Maps API.
+///
+/// This class provides methods to convert between coordinates and addresses,
+/// and vice versa, using the Google Maps Geocoding API.
 class GeocoderPro {
-  ///Get City ,country , postalCode,state,streetNumber and countryCode from latitude and longitude
+  /// Retrieves location data from latitude and longitude coordinates.
+  ///
+  /// This method uses the Google Maps Geocoding API to fetch detailed location
+  /// information including city, country, postal code, state, and street number
+  /// from the provided coordinates.
+  ///
+  /// [latitude] The latitude coordinate.
+  /// [longitude] The longitude coordinate.
+  /// [googleMapApiKey] Your Google Maps API key.
+  /// [language] Optional language code for the results (e.g., 'en', 'es').
+  /// Returns a [GeoData] object containing the location details, or null if the request fails.
   static Future<GeoData?> getDataFromCoordinates({
     required double latitude,
     required double longitude,
@@ -63,7 +77,16 @@ class GeocoderPro {
     }
   }
 
-  ///Get City ,country , postalCode,state,streetNumber and countryCode from address like "277 Bedford Ave, Brooklyn, NY 11211, USA"
+  /// Retrieves location data from a physical address.
+  ///
+  /// This method uses the Google Maps Geocoding API to fetch detailed location
+  /// information including coordinates, city, country, postal code, state, and
+  /// street number from the provided address string.
+  ///
+  /// [address] The physical address to geocode (e.g., "277 Bedford Ave, Brooklyn, NY 11211, USA").
+  /// [googleMapApiKey] Your Google Maps API key.
+  /// [language] Optional language code for the results (e.g., 'en', 'es').
+  /// Returns a [GeoData] object containing the location details, or null if the request fails.
   static Future<GeoData?> getDataFromAddress({
     required String address,
     required String googleMapApiKey,
