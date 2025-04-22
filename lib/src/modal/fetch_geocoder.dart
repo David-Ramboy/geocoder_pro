@@ -229,7 +229,7 @@ enum LocationType {
   approximate,
 
   /// The location is interpolated from a range.
-  rangeInterpolated
+  rangeInterpolated,
 }
 
 /// Maps between [LocationType] enum values and their string representations.

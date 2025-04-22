@@ -1,5 +1,12 @@
 # Geocoder Pro
 
+[![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![pub package](https://img.shields.io/pub/v/geocoder_pro.svg)](https://pub.dev/packages/geocoder_pro)
+[![likes](https://img.shields.io/pub/likes/geocoder_pro)](https://pub.dev/packages/geocoder_pro)
+[![popularity](https://img.shields.io/pub/popularity/geocoder_pro)](https://pub.dev/packages/geocoder_pro)
+[![points](https://img.shields.io/pub/points/geocoder_pro)](https://pub.dev/packages/geocoder_pro)
+
 A Flutter package for easy forward and reverse geocoding using the Google Maps API.
 
 ## 🚀 Features

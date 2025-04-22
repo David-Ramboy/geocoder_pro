@@ -33,7 +33,7 @@ class _GeocoderExampleState extends State<GeocoderExample> {
   final TextEditingController _latitudeController = TextEditingController();
   final TextEditingController _longitudeController = TextEditingController();
   final TextEditingController _apiKeyController = TextEditingController();
-  
+
   String _result = '';
   bool _isLoading = false;
 
@@ -224,4 +224,4 @@ class _GeocoderExampleState extends State<GeocoderExample> {
       ),
     );
   }
-} 
+}
