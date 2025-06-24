@@ -4,7 +4,7 @@ version: 1.0.3
 homepage: https://github.com/rohitsoni9/geocoder_pro.git
 
 environment:
-  sdk: ^3.7.2
+  sdk: ">=3.3.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
